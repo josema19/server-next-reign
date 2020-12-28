@@ -15,7 +15,7 @@ conectDB();
 job.start()
 
 // Definir Puerto
-const PORT = process.env.port || 4000;
+const port = process.env.port || 4000;
 
 // Habilitar Cors
 app.use(cors());
@@ -24,7 +24,7 @@ app.use(cors());
 app.use('/api/articles', require('./routes/articles'));
 
 // Correr Servidor
-app.listen(PORT, () => {
-    console.log(`El servidor está funcionando en el puerto ${PORT}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`El servidor está funcionando en el puerto ${port}`);
     saveArticles();
 });
